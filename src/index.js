@@ -9,15 +9,11 @@ const Theme = {
 
 const body = document.body;
 const menuConstainer = document.querySelector('.js-menu');
-const menuCard = createdCardMarkup(menu);
+const menuCard = menuCards(menu);
 const themeChanger = document.querySelector('.theme-switch__toggle');
 
 themeChanger.addEventListener('change', themeSwitch);
 menuConstainer.insertAdjacentHTML('beforeend', menuCard);
-
-function createdCardMarkup(menuCreator) {
-  return menuCreator.map(menuCards).join(``);
-}
 
 function themeSwitch() {
   if (themeChanger.checked) {
