@@ -19,16 +19,24 @@ function createdCardMarkup(menuCreator) {
   return menuCreator.map(menuCards).join(``);
 }
 
-function themeSwitch(evt) {
+function themeSwitch() {
   if (themeChanger.checked) {
-    localStorage.setItem('Theme', JSON.stringify(Theme.DARK));
+    localStorage.setItem('Theme', Theme.DARK);
     body.classList.remove(Theme.LIGHT);
     body.classList.add(Theme.DARK);
-    console.log(themeChanger.checked);
   } else {
-    localStorage.setItem('Theme', JSON.stringify(Theme.LIGHT));
+    localStorage.setItem('Theme', Theme.LIGHT);
     body.classList.remove(Theme.DARK);
     body.classList.add(Theme.LIGHT);
-    console.log(themeChanger.checked);
   }
+}
+
+const savedTheme = localStorage.getItem('Theme');
+if (savedTheme === 'dark-theme') {
+  body.classList.remove(Theme.LIGHT);
+  body.classList.add(Theme.DARK);
+  themeChanger.checked = true;
+} else {
+  body.classList.remove(Theme.DARK);
+  body.classList.add(Theme.LIGHT);
 }
