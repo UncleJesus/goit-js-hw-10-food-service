@@ -21,12 +21,12 @@ function createdCardMarkup(menuCreator) {
 
 function themeSwitch(evt) {
   if (themeChanger.checked) {
-    localStorage.setItem('Theme', Theme.DARK);
+    localStorage.setItem('Theme', JSON.stringify(Theme.DARK));
     body.classList.remove(Theme.LIGHT);
     body.classList.add(Theme.DARK);
     console.log(themeChanger.checked);
   } else {
-    localStorage.setItem('Theme', Theme.LIGHT);
+    localStorage.setItem('Theme', JSON.stringify(Theme.LIGHT));
     body.classList.remove(Theme.DARK);
     body.classList.add(Theme.LIGHT);
     console.log(themeChanger.checked);
